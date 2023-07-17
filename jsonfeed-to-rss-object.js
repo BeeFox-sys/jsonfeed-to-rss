@@ -38,7 +38,7 @@ module.exports = function jsonfeedToAtomObject (jf, opts) {
   // https://validator.w3.org/feed/docs/rss2.html
 
   const { title, version, home_page_url: homePageURL, description, feed_url: feedURL } = jf
-  if (version !== 'https://jsonfeed.org/version/1') throw new Error('jsonfeed-to-atom: JSON feed version 1 required')
+  if (version !== 'https://jsonfeed.org/version/1' && version !== 'https://jsonfeed.org/version/1.1' && ) throw new Error('jsonfeed-to-atom: JSON feed version 1 or 1.1 required')
   if (!title) throw new Error('jsonfeed-to-rss: missing title')
   if (!feedURL) throw new Error('jsonfeed-to-atom: missing feed_url')
   if (!homePageURL) throw new Error('jsonfeed-to-rss: JSON feed missing home_page_url property')
